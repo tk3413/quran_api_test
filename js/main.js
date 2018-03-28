@@ -46,7 +46,12 @@ $(document).ready(function(){
 
         }).then(function (response){
             console.log(`Surah: ${response.data.surah.englishName}`);
-            console.log(response.data.text);
+            var ayat = response.data.text;
+            console.log(ayat);
+            var sampleElement = document.getElementById('sample-id');
+            var arabicScript = $('<p>');
+            arabicScript.text(ayat);
+            arabicScript.appendTo(sampleElement);
 
         });// then
 
